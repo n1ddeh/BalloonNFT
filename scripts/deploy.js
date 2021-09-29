@@ -3,7 +3,7 @@ async function main() {
     const MyNFT = await ethers.getContractFactory("BalloonNFT");
  
     // Start deployment, returning a promise that resolves to a contract object
-    const myNFT = await MyNFT.deploy(); // Instance of the contract 
+    const myNFT = await MyNFT.deploy("https://gateway.pinata.cloud/ipfs/QmQCvf5PKe6CJbGxrTJ92Z9xbDjNLMcNJ5BGLA5UZhnYAu/balloon_0.jpg"); // Instance of the contract 
     console.log("Contract deployed to address:", myNFT.address);
  }
  
