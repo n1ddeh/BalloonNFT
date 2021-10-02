@@ -22,9 +22,8 @@ contract BalloonNFT is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
     string public baseTokenURI;
 
     event CreateBalloon(uint256 indexed id);
-    constructor(string memory baseURI) ERC721("BalloonNFT", "PPG") {
+    constructor(string memory baseURI) ERC721("BalloonNFT", "BNFT") {
         setBaseURI(baseURI);
-        pause(true);
     }
 
     modifier saleIsOpen {
@@ -86,6 +85,12 @@ contract BalloonNFT is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable
             return;
         }
         _unpause();
+    }
+    function unpause(bool val) public onlyOwner {
+        if (val == true) {
+            _unpause();
+            return;
+        }
     }
 
     function withdrawAll() public payable onlyOwner {
