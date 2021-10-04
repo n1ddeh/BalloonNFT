@@ -1,49 +1,41 @@
 <template>
-  <div class="w-screen h-screen bg-gradient-to-b from-indigo-900 to-black overflow-hidden relative">
-    <div class="py-2 md:py-8 lg:py-12 xl:py-10 2xl:py-16 px-1 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-row justify-center my-0 mx-auto max-w-screen-xl" style="height: calc(100vh - 2.7825rem);">
-      <div class="max-w-full h-full m-auto overflow-y-auto">
-        <div class="px-4 nft-container relative">
-          <NFT v-for="(nft, i) in nftCollection" :key="`${i}_${nft.title}`"
-            :title="nft.title" :description="nft.description" :src="nft.srcName"/>
-        </div>
+  <div class="w-screen h-screen relative flex justify-center overflow-y-auto overflow-x-hidden" id="home-page-wrapper">
+    <div class="pt-2 md:pt-8 lg:pt-12 xl:pt-10 2xl:py-16 px-1 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-row justify-center my-0 max-w-screen-xl w-full">
+      <div class="max-w-full h-full overflow-visible w-full">
+        <b-header />
+        <b-intro class="md:mb-48 mb-96" />
+        <b-army class="md:my-48 mt-96 mb-48" />
+        <b-team class="md:my-48 mb-24" />
+        <b-road-map class="md:my-48 mb-24" />
+        <b-faq class="mt-48 mb-96" />
       </div>
     </div>
     <notifications position="bottom left" group="default" /> 
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      nftCollection: []
-    }
-  },
-  created() {
-    this.initCollection()
-  },
-  methods: {
-    initCollection() {
-      this.nftCollection = []
-      for (let i = 0; i < 10; ++i) {
-        this.nftCollection.push(
-          {
-            title: `BalloonNFT ${i}`,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At optio excepturi suscipit consectetur magnam eos aperiam hic aut delectus a accusamus, architecto voluptates aliquam quasi incidunt rerum facilis ex eius?",
-            srcName: `balloon_${i}`
-          }
-        )
-      }
-    }
+<script lang="ts">
+import Vue from 'vue'
+import Header from '@/components/Header.vue'
+import Intro from '@/components/Intro.vue'
+import Army from '@/components/Army.vue'
+import Team from '@/components/Team.vue'
+import RoadMap from '@/components/Roadmap.vue'
+import FAQ from '@/components/FAQ.vue'
+export default Vue.extend({
+  components: {
+    'b-header' : Header,
+    'b-intro' : Intro,
+    'b-army' : Army,
+    'b-team': Team,
+    'b-road-map': RoadMap,
+    'b-faq': FAQ
   }
-}
+})
 </script>
 
 <style scoped>
-.nft-container::before {
-  content: "";
-  background-color: #1f293757;
-  position: absolute;
-  inset: 0;
+#home-page-wrapper {
+  background: linear-gradient(60deg, #93ddff, #C2ECFF);
 }
 </style>

@@ -1,7 +1,7 @@
 export const state = () => ({
-    selectedAccount: 1,
-    accounts: 2,
-    networkVersion: 3
+    selectedAccount: null,
+    accounts: null,
+    networkVersion: null
 })
 
 export const mutations = {

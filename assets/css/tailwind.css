@@ -11,6 +11,30 @@
 }
 
 @font-face {
+    font-family: 'Montserrat-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~assets/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('~assets/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('~assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -19,11 +43,7 @@
 }
 
 * {
-    font-family: 'Roboto', Futura, Trebuchet MS, Arial, sans-serif
-}
-
-h1, h2, h3, h4 {
-    font-family: 'GemunuLibre', Futura, Trebuchet MS, Arial, sans-serif
+    font-family: 'Montserrat-Regular', 'GemunuLibre', 'Roboto', Futura, Trebuchet MS, Arial, sans-serif
 }
 
 h1 {
@@ -42,13 +62,20 @@ h4 {
     font-size: 28px;
 }
 
+img {
+    height: auto;
+    width: 100%;
+    max-width: none;
+}
+
 ::-webkit-scrollbar {
     height: 6px;
-    width: 5px;
+    width: 0px;
     border: 1px solid #d5d5d5;
 }
 ::-webkit-scrollbar-track {
     border-radius: 0;
+    width: 0;
     background: #eeeeee;
 }
 ::-webkit-scrollbar-thumb {
